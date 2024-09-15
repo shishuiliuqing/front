@@ -1,0 +1,48 @@
+.clock-box {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    height: 200px;
+    background: #ffffff;
+    /* background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%); */
+    background-size: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.clock-box .text {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.clock-box .anticon {
+    margin-right: 8px;
+}
+
+.clock-box .text {
+    color: black;
+}
+
+#clock {
+    font-family: 'Comic Sans MS';
+    color: #ffffff;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -20%);
+    color: #868686;
+    text-shadow: 0 0 10px rgb(84, 84, 84), 0 0 10px rgba(90, 90, 90, 0);
+
+    .time {
+        letter-spacing: 0.05em;
+        font-size: 45px;
+        padding: 5px 0;
+    }
+
+    .date {
+        letter-spacing: 0.1em;
+        font-size: 15px;
+    }
+}

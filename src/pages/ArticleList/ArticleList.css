@@ -1,0 +1,60 @@
+/* .ant-card .ant-card-body {
+    padding-bottom: 0;
+} */
+
+.rank-icon {
+    transition: all 0.5s;
+    transform: rotate(90deg);
+}
+
+.batch-operation-box,
+.rank-box {
+    margin-top: 20px;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.batch-operation-box.hide,
+.rank-box.hide {
+    margin-top: 0;
+    height: 0;
+    padding-bottom: 0;
+    border-bottom: none
+}
+
+.batch-operation-box {
+    height: 32px;
+}
+
+.rank-box {
+    height: 42px;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.rank-box #rank-btn {
+    position: relative;
+    border: none;
+    box-shadow: none;
+    color: #61666d;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 0;
+    padding-bottom: 10px;
+}
+
+.rank-box #rank-btn.active {
+    color: #00aeec;
+    border-bottom: 1px solid #00aeec;
+}
+
+.batch-operation-box #delete-btn {
+    color: #d4380d;
+    background: #fff2e8;
+    border-color: #ffbb96;
+}
+
+.batch-operation-box #pin-btn {
+    color: #389e0d;
+    background: #f6ffed;
+    border-color: #b7eb8f;
+}

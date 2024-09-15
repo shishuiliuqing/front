@@ -1,0 +1,134 @@
+.fixed-header {
+    width: 100%;
+    background-color: #fff;
+    padding-top: 4px;
+    z-index: 5;
+}
+
+.tab-container {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    --bcc-top-nav-height: 60px;
+    --bcc-side-bar-width: 200px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    box-sizing: inherit;
+    width: 754px;
+    margin: 0 auto;
+}
+
+.tab-container .tab {
+    display: inline-block;
+    margin-top: 7px;
+    font-size: 15px;
+    margin-right: 24px;
+    position: relative;
+    color: #222;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.tab-container .tab.active {
+    color: #00a1d6;
+    border-bottom: 1px solid #00a1d6;
+}
+
+.tab-container .tab.active::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border: 0 none;
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid #00a1d6;
+}
+
+.web-editor__wrap {
+    height: auto;
+    padding-top: 20PX;
+    margin: 0 auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    min-height: 100%;
+    overflow: auto;
+}
+
+.read-editor {
+    width: 740px;
+    position: relative;
+    border: 1px solid #e5e9ef;
+    border-radius: 4px;
+    padding: 0 40px;
+    background-color: #fff;
+    font: 12px / 1.5 Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, \\5FAE软雅黑, Arial, sans-serif;
+    color: #222;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+.bre-title-input {
+    margin-top: 30px;
+    position: relative;
+    padding: 12px 0 12px 0;
+    box-sizing: border-box;
+}
+
+.edit-article-wrap .ql-editor {
+    min-height: 300px;
+}
+
+
+#content {
+    .ql-toolbar.ql-snow {
+        padding: 0;
+        border: none;
+    }
+
+    .ql-container.ql-snow {
+        border: none;
+        font-size: 16px;
+        margin-top: 30px;
+    }
+
+    .ql-snow .ql-picker {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .ql-toolbar.ql-snow .ql-formats {
+        padding: 8px 5px;
+        background-color: #f1f3f7;
+        margin-right: 1px;
+    }
+
+    .ql-snow.ql-toolbar button,
+    .ql-snow .ql-toolbar button {
+        padding: 3px 10px;
+        width: 40px;
+    }
+
+    .ql-snow .ql-picker {
+        margin-right: 10px;
+    }
+
+    .ql-picker.ql-picker-label {
+        padding: 0 4px;
+    }
+
+    .ql-editor::before {
+        color: #BFBFBF;
+    }
+}
+
+.edit-article-wrap .ant-btn {
+    background-color: #37c8f7;
+    color: #fff;
+}
