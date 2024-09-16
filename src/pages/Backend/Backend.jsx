@@ -10,7 +10,7 @@ import {
   SendOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setcurrentPage } from '@/store/modules/backend';
 
@@ -24,41 +24,39 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
-  getItem('欢迎', '/'),
+  getItem('欢迎', '/backend'),
   getItem('文章管理', '2', <FormOutlined />, [
-    getItem('文章列表', '/articleList', <UnorderedListOutlined />),
-    getItem('文章发布', '/articleEditor', <SendOutlined />)
+    getItem('文章列表', '/backend/articleList', <UnorderedListOutlined />),
+    getItem('文章发布', '/backend/articleEditor', <SendOutlined />)
   ]),
 ];
 
 const Backend = () => {
   const navigate = useNavigate()
-  const currentPage = useSelector((state) => state.backend.currentPage)
-  const dispatch = useDispatch()
 
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
-  const pageToOpenKeys = {  
-    '/articleList': ['2'],  
-    '/articleEditor': ['2'],
-  };
-  const storedOpenKeys = localStorage.getItem('openKeys');  
-  const initialOpenKeys = storedOpenKeys ? JSON.parse(storedOpenKeys) : [];  
   
-  const [openKeys, setOpenKeys] = useState(initialOpenKeys); 
+
+  const pageToOpenKeys = {
+    '/backend/articleList': ['2'],
+    '/backend/articleEditor': ['2'],
+  }
+  const location = useLocation()
+  const selectedKey = location.pathname
+  const matchedOpenKeys = pageToOpenKeys[selectedKey] || []  
+  const [openKeys, setOpenKeys] = useState(matchedOpenKeys)
+  
+  useEffect(() => {
+    const matchedOpenKeys = pageToOpenKeys[selectedKey] || []
+    setOpenKeys(matchedOpenKeys);
+  }, [selectedKey])
 
   const onMenuClick = (router) => {
-    dispatch(setcurrentPage(router.key))
-    navigate(`/backend${router.key}`)
+    navigate(router.key)
   }
-
-  useEffect(() => {  
-    const matchedOpenKeys = pageToOpenKeys[currentPage] || [];  
-    setOpenKeys(matchedOpenKeys);  
-    localStorage.setItem('openKeys', JSON.stringify(matchedOpenKeys));  
-  }, [currentPage]);
 
   return (
     <Layout style={{ height: "100%" }}>
@@ -76,7 +74,7 @@ const Backend = () => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={[currentPage]}
+          selectedKeys={selectedKey}
           defaultOpenKeys={openKeys}
           items={items}
           onClick={onMenuClick}
