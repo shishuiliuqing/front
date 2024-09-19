@@ -7,6 +7,8 @@ import ArticleEditor from "./pages/ArticleEditor/ArticleEditor";
 import Login from "./pages/Login/Login";
 import ArticleList from "./pages/ArticleList/ArticleList";
 import Welcome from "./pages/Welcome/Welcome";
+import PersonCenter from "./pages/PersonCenter/PersonCenter";
+import UserInfo from "./component/UserInfo/UserInfo";
 
 const router = createBrowserRouter([
     {
@@ -19,8 +21,18 @@ const router = createBrowserRouter([
             },
             {
                 path: 'article/:id',
-                element: <Article></Article>
-            }
+                element: <Article />
+            },
+            {
+                path: 'personCenter/',
+                element: <PersonCenter />,
+                children: [
+                    {
+                        index: true,
+                        element: <UserInfo />
+                    },
+                ]
+            },
         ]
     },
     {

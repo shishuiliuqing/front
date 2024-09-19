@@ -65,7 +65,7 @@ const ArticleList = () => {
             key: 'action',
             render: (_, record) => (
                 <Space size="middle">
-                    <a onClick={() => navigate(`/article/${record.id}`)}>链接</a>
+                    <a onClick={() =>{ navigate(`/article/${record.key}`)}}>链接</a>
                     <a>编辑</a>
                     <a>删除</a>
                 </Space>

@@ -1,0 +1,120 @@
+.person-right-title {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    color: #00a1d6;
+    font-weight: 500;
+}
+
+.person-right-title-icon {
+    float: left;
+    width: 4px;
+    height: 16px;
+    margin-top: 18px;
+    background-color: #00a1d6;
+    border-radius: 4px;
+}
+
+.person-right-title-text {
+    float: left;
+    margin: 15px 0 0 5px;
+    color: #00a1d6;
+    font-size: 17px;
+    cursor: default;
+}
+
+.face-tool {
+    padding-top: 24px;
+}
+
+.tool-container {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #e5e9ef;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.tool-change-face {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c850c075, #4159d075);
+    border: 1px solid #4a3cc5;
+    position: absolute;
+    left: -27px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+.tool-change-face:hover {
+    color: #fff;
+}
+
+.tool-face-box {
+    width: 168px;
+    height: 168px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tool-user-face {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.user-setting-wrap {
+    padding: 30px 60px 0;
+
+    .ant-form-item-label {
+        margin-right: 15px;
+
+        label {
+            color: #717171;
+            font-size: 16px;
+        }
+    }
+
+    .ant-col {
+        font-size: 16px;
+        color: #717171;
+    }
+}
+
+.form-item-btn {
+    margin-left: 10px;
+    color: #d2d2d2;
+    text-decoration: underline;
+}
+
+.form-item-btn:hover {
+    color: pink;
+}
+
+.user-btn-box {
+    position: relative;
+    width: 100%;
+    height: 80px;
+}
+
+.user-save-btn {
+    position: absolute;
+    width: 110px;
+    height: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00a1d6;
+    color: #fff;
+}

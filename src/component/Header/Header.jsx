@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./Header.css"
 import {
     HomeOutlined,
+    UserOutlined,
 } from '@ant-design/icons';
 import { Avatar, Dropdown } from "antd";
 import avatar from '@/assets/laffey.jpg'
@@ -18,6 +19,14 @@ const Header = () => {
                 </a>
             ),
         },
+        {
+            key: '2',
+            label: (
+                <a onClick={() => navigate('/login')}>
+                    退出登录
+                </a>
+            ),
+        },
     ]
 
     return (
@@ -31,11 +40,15 @@ const Header = () => {
                         <HomeOutlined />
                         首页
                     </a>
+                    <a onClick={() => navigate('personCenter')} className="header-menu-item">
+                        <UserOutlined />
+                        个人中心
+                    </a>
                 </div>
                 <div className='nav-right'>
                     <Dropdown
                         menu={{
-                            style: {borderRadius: 'none'},
+                            style: { borderRadius: 'none' },
                             items: avatarItems,
                         }}
                     >
@@ -43,7 +56,6 @@ const Header = () => {
                             <Avatar size={55} src={avatar} />
                         </div>
                     </Dropdown>
-
                 </div>
             </div>
             <div className="header-mask"></div>
