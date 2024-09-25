@@ -3,6 +3,7 @@ import './UserInfo.css'
 import { Button, Divider, Form, Input, Space, Upload } from 'antd'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import avatar from '@/assets/laffey.jpg'
+import { useNavigate } from 'react-router-dom';
 
 const data = {
   nickname: 'MiaoMiao',
@@ -11,27 +12,9 @@ const data = {
 }
 
 const UserInfo = () => {
-  const [loading, setLoading] = useState(false)
-  const [changeNickname, setChangeNickname] = useState(false)
+  const navigate = useNavigate()
 
-  const uploadButton = (
-    <button
-      style={{
-        border: 0,
-        background: 'none',
-      }}
-      type="button"
-    >
-      {loading ? <LoadingOutlined /> : <PlusOutlined />}
-      <div
-        style={{
-          marginTop: 8,
-        }}
-      >
-        Upload
-      </div>
-    </button>
-  )
+  const [changeNickname, setChangeNickname] = useState(false)
 
   const [form] = Form.useForm()
   form.setFieldsValue({
@@ -74,7 +57,6 @@ const UserInfo = () => {
             name='nickname'
             label='昵称'
           >
-            {/* <Input style={{ width: '300px' }} /> */}
             {
               changeNickname ? (
                 <Input style={{ width: '300px', fontSize: '16px', color: '#717171' }} />
@@ -92,7 +74,7 @@ const UserInfo = () => {
           >
             <Space>
               <span>{data.email}</span>
-              <a className='form-item-btn'>修改</a>
+              <a className='form-item-btn' onClick={() => { navigate('changeEmail') }}>修改</a>
             </Space>
           </Form.Item>
           <Form.Item

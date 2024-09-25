@@ -178,7 +178,6 @@ const Login = () => {
                                     noStyle
                                 >
                                     <input type="text" className="ipt" placeholder="请输入验证码" />
-
                                 </Form.Item>
                                 <SendCaptchaBtn />
                             </div>

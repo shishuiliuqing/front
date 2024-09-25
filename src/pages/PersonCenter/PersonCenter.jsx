@@ -3,12 +3,12 @@ import './PersonCenter.css'
 import { Avatar, Button, Card, Flex, Layout, Menu, Modal, Space } from 'antd'
 const { Header, Content, Footer, Sider } = Layout;
 import { EditOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import avatar from '@/assets/laffey.jpg'
 
 const items = [
   {
-    key: 'baseInfo',
+    key: '/personCenter',
     label: '我的信息',
     icon: <UserOutlined />,
   },
@@ -18,11 +18,11 @@ const items = [
     icon: <EditOutlined />,
     children: [
       {
-        key: 'changeEmail',
+        key: '/personCenter/changeEmail',
         label: '更改邮箱',
       },
       {
-        key: 'changeAvatar',
+        key: '/personCenter/changeAvatar',
         label: '更换头像',
       },
     ]
@@ -30,17 +30,12 @@ const items = [
 ];
 
 const PersonCenter = () => {
-  const onMenuClick = (key) => {
-    if (key == 'changeNickname') {
+  const navigate = useNavigate()
+  const selectedKey = location.pathname
 
-    } else if (key == 'changeEmail') {
-
-    } else if (key == 'changeAvatar') {
-
-    }
+  const onMenuClick = (value) => {
+    navigate(value.key)
   }
-
-
 
   return (
     <div className='person-bg'>
@@ -89,7 +84,7 @@ const PersonCenter = () => {
             <Menu
               theme="light"
               mode="inline"
-              defaultSelectedKeys={['baseInfo']}
+              selectedKeys={selectedKey}
               defaultOpenKeys={['change']}
               items={items}
               onClick={onMenuClick}

@@ -9,6 +9,7 @@ import ArticleList from "./pages/ArticleList/ArticleList";
 import Welcome from "./pages/Welcome/Welcome";
 import PersonCenter from "./pages/PersonCenter/PersonCenter";
 import UserInfo from "./component/UserInfo/UserInfo";
+import ChangeEmail from "./component/ChangeEmail/ChangeEmail";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
                         index: true,
                         element: <UserInfo />
                     },
+                    {
+                        path: 'changeEmail',
+                        element: <ChangeEmail />
+                    }
                 ]
             },
         ]

@@ -38,8 +38,6 @@ const Backend = () => {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
-  
-
   const pageToOpenKeys = {
     '/backend/articleList': ['2'],
     '/backend/articleEditor': ['2'],
